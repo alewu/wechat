@@ -1,0 +1,14 @@
+logging:
+  level:
+    org.springframework.web: INFO
+    com.github.binarywang.demo.wx.mp: DEBUG
+    me.chanjar.weixin: DEBUG
+server:
+  port: 80
+wx:
+  mp:
+    configs:
+      - appId: wxa9aad29dd2073c65
+        secret: 9c4439dde7d7eb51d0f6a99fa5e1d47a
+        token: b7e72e60ef76519db01215ef5292de05
+        aesKey: 2VrGqhM4Kx41wQOAGuN9uasbpDtN1TcE8dcC5XRnrEe
