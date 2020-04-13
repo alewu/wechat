@@ -52,9 +52,9 @@ public class QuartzService {
     @Autowired
     private WeatherService weatherService;
 
-    @Scheduled(cron = "0/300 * * * * ?")
+    @Scheduled(cron = "0/3000 * * * * ?")
     public void runFirst() {
-        compose(users[1]);
+        compose(users[0]);
     }
 
     private void compose(String user) {

@@ -34,20 +34,21 @@ public class WeatherService {
     }
 
     private String getJsonStringFromGzip(ResponseEntity<String> response) {
-        InputStream in;
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        try {
-            in = new ByteArrayInputStream(Objects.requireNonNull(response.getBody()).getBytes(StandardCharsets.ISO_8859_1.name()));
+        String transferStr = "";
+        try (InputStream in =
+                     new ByteArrayInputStream(Objects.requireNonNull(response.getBody()).getBytes(StandardCharsets.ISO_8859_1.name()));
+             ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             GZIPInputStream gunzip = new GZIPInputStream(in);
             byte[] buffer = new byte[256];
             int n;
             while ((n = gunzip.read(buffer)) >= 0) {
                 out.write(buffer, 0, n);
             }
+            transferStr = out.toString();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return out.toString();
+        return transferStr;
     }
 
     private HttpHeaders getHttpHeaders() {
