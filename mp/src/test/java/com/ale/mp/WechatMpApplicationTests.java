@@ -5,7 +5,6 @@ import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutTextMessage;
 import me.chanjar.weixin.mp.util.xml.XStreamTransformer;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 //@SpringBootTest
 class WechatMpApplicationTests {
@@ -54,6 +53,22 @@ class WechatMpApplicationTests {
         WxMpXmlOutTextMessage wxMpXmlOutTextMessage = XStreamTransformer.fromXml(WxMpXmlOutTextMessage.class, xml);
 
         System.out.println(wxMpXmlOutTextMessage.getMsgType());
+
+    }
+
+    @Test
+    public void tesXml1(){
+        String xml = "<xml>\n" +
+                "  <ToUserName><![CDATA[o_cxxxsMUWXI6aG14]]></ToUserName>\n" +
+                "  <FromUserName><![CDATA[gh_xxx]]></FromUserName>\n" +
+                "  <CreateTime><![CDATA[1591961648]]></CreateTime>\n" +
+                "  <MsgType><![CDATA[text]]></MsgType>\n" +
+                "  <Content><![CDATA[踩踩踩从<a href='www.baidu.com'>xx</a>]]></Content>\n" +
+                "</xml> \n";
+
+        WxMpXmlOutMessage wxMpXmlOutMessage = XStreamTransformer.fromXml(WxMpXmlOutMessage.class, xml);
+
+        System.out.println(wxMpXmlOutMessage.getMsgType());
 
     }
 
