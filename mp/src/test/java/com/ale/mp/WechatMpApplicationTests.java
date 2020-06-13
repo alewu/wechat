@@ -5,6 +5,7 @@ import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutTextMessage;
 import me.chanjar.weixin.mp.util.xml.XStreamTransformer;
 import org.junit.jupiter.api.Test;
+import org.springframework.util.StopWatch;
 
 //@SpringBootTest
 class WechatMpApplicationTests {
@@ -33,7 +34,11 @@ class WechatMpApplicationTests {
                 "  <MsgType><![CDATA[text]]></MsgType>\n" +
                 "  <Content><![CDATA[<a href='http://sp.upuptec.cn/h5/index.html?linkId=1186'>平均分配</a>]]></Content>\n" +
                 "</xml>\n";
+        StopWatch sw = new StopWatch("WechatMpApplicationTests.test");
+        sw.start();
         WxMpXmlMessage wxMpXmlMessage = XStreamTransformer.fromXml(WxMpXmlMessage.class, aa);
+        sw.stop();
+        System.out.println(sw.getTotalTimeMillis());
         System.out.println(wxMpXmlMessage.getMsgType());
 
     }
@@ -49,7 +54,6 @@ class WechatMpApplicationTests {
                 "</xml> \n";
         WxMpXmlMessage wxMpXmlMessage = XStreamTransformer.fromXml(WxMpXmlMessage.class, xml);
         System.out.println(wxMpXmlMessage.getMsgType());
-
         WxMpXmlOutTextMessage wxMpXmlOutTextMessage = XStreamTransformer.fromXml(WxMpXmlOutTextMessage.class, xml);
 
         System.out.println(wxMpXmlOutTextMessage.getMsgType());
