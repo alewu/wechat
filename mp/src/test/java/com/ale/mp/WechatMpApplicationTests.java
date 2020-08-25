@@ -1,11 +1,15 @@
 package com.ale.mp;
 
+import com.alibaba.fastjson.JSON;
+import me.chanjar.weixin.mp.bean.kefu.WxMpKefuMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutTextMessage;
 import me.chanjar.weixin.mp.util.xml.XStreamTransformer;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.StopWatch;
+
+import java.util.List;
 
 //@SpringBootTest
 class WechatMpApplicationTests {
@@ -24,8 +28,9 @@ class WechatMpApplicationTests {
         System.out.println(wxMpXmlMessage.getContent());
 
     }
+
     @Test
-    public void test(){
+    public void test() {
 
         String aa = "<xml>\n" +
                 "  <ToUserName><![CDATA[o_cxDuBE2Bn9IvxSUsMUWXI6aG14]]></ToUserName>\n" +
@@ -44,7 +49,7 @@ class WechatMpApplicationTests {
     }
 
     @Test
-    public void tesXml(){
+    public void tesXml() {
         String xml = "<xml>\n" +
                 "  <ToUserName><![CDATA[o_cxxxsMUWXI6aG14]]></ToUserName>\n" +
                 "  <FromUserName><![CDATA[gh_xxx]]></FromUserName>\n" +
@@ -61,7 +66,7 @@ class WechatMpApplicationTests {
     }
 
     @Test
-    public void tesXml1(){
+    public void tesXml1() {
         String xml = "<xml>\n" +
                 "  <ToUserName><![CDATA[o_cxxxsMUWXI6aG14]]></ToUserName>\n" +
                 "  <FromUserName><![CDATA[gh_xxx]]></FromUserName>\n" +
@@ -74,6 +79,14 @@ class WechatMpApplicationTests {
 
         System.out.println(wxMpXmlOutMessage.getMsgType());
 
+    }
+
+    @Test
+    void test1() {
+        String article = "[{\"title\": \"aaa\",\"description\": \"aa\",\"url\": \"xx\",\"picurl\": \"http://134.175.245.70:808/wxc3cb5723a8c7b4f8/image/20200821/15979959228725918.jpg\"}]";
+        List<WxMpKefuMessage.WxArticle> wxArticles = JSON.parseArray(article, WxMpKefuMessage.WxArticle.class);
+        WxMpKefuMessage.WxArticle wxArticle = wxArticles.get(0);
+        System.out.println(wxArticle.getPicUrl());
     }
 
 }
