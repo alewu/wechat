@@ -16,7 +16,7 @@ import static me.chanjar.weixin.common.api.WxConsts.EventType;
  * @author Binary Wang(https://github.com/binarywang)
  */
 @Component
-public class MenuHandler extends AbstractHandler {
+public class MenuClickHandler extends AbstractHandler {
     @Autowired
     private XmlMsgStrategyContext xmlMsgStrategyContext;
 

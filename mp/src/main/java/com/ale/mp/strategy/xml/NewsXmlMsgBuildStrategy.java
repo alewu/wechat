@@ -13,6 +13,6 @@ import org.springframework.stereotype.Component;
 public class NewsXmlMsgBuildStrategy implements XmlMsgBuildStrategy {
     @Override
     public WxMpXmlOutMessage build(String msgContent) {
-        return WxMpXmlOutMessage.TEXT().fromUser("").toUser("").content(msgContent).build();
+        return WxMpXmlOutMessage.NEWS().fromUser("").toUser("").addArticle(null).build();
     }
 }

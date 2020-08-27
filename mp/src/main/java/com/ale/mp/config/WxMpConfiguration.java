@@ -35,7 +35,7 @@ public class WxMpConfiguration {
     private final KfSessionHandler kfSessionHandler;
     private final StoreCheckNotifyHandler storeCheckNotifyHandler;
     private final LocationHandler locationHandler;
-    private final MenuHandler menuHandler;
+    private final MenuClickHandler menuClickHandler;
     private final MsgHandler msgHandler;
     private final UnsubscribeHandler unsubscribeHandler;
     private final SubscribeHandler subscribeHandler;
@@ -78,8 +78,8 @@ public class WxMpConfiguration {
         // 门店审核事件
         newRouter.rule().async(false).msgType(EVENT).event(POI_CHECK_NOTIFY).handler(this.storeCheckNotifyHandler).end();
 
-        // 自定义菜单事件
-        newRouter.rule().async(false).msgType(EVENT).event(EventType.CLICK).handler(this.menuHandler).end();
+        // 自定义菜单点击事件
+        newRouter.rule().async(false).msgType(EVENT).event(EventType.CLICK).handler(this.menuClickHandler).end();
 
         // 点击菜单连接事件
         newRouter.rule().async(false).msgType(EVENT).event(EventType.VIEW).handler(this.nullHandler).end();

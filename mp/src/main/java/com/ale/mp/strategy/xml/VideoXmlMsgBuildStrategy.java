@@ -13,6 +13,6 @@ import org.springframework.stereotype.Component;
 public class VideoXmlMsgBuildStrategy implements XmlMsgBuildStrategy {
     @Override
     public WxMpXmlOutMessage build(String msgContent) {
-        return WxMpXmlOutMessage.TEXT().fromUser("").toUser("").content(msgContent).build();
+        return WxMpXmlOutMessage.VIDEO().fromUser("").toUser("").mediaId(msgContent).build();
     }
 }
