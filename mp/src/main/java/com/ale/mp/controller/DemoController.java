@@ -1,7 +1,7 @@
 package com.ale.mp.controller;
 
 import com.ale.mp.bean.KeFuMessage;
-import com.ale.mp.strategy.kefu.KefuMsgStrategyContext;
+import com.ale.mp.strategy.KefuMsgStrategyContext;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.error.WxErrorException;

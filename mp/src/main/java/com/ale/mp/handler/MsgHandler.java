@@ -1,6 +1,6 @@
 package com.ale.mp.handler;
 
-import com.ale.mp.strategy.xml.XmlMsgStrategyContext;
+import com.ale.mp.strategy.XmlMsgStrategyContext;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;

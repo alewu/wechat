@@ -1,6 +1,6 @@
 package com.ale.mp.handler;
 
-import com.ale.mp.strategy.xml.XmlMsgStrategyContext;
+import com.ale.mp.strategy.XmlMsgStrategyContext;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
-
-import static me.chanjar.weixin.common.api.WxConsts.EventType;
 
 /**
  * @author Binary Wang(https://github.com/binarywang)

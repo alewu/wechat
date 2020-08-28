@@ -1,4 +1,4 @@
-package com.ale.mp.strategy.kefu;
+package com.ale.mp.strategy;
 
 
 import me.chanjar.weixin.mp.bean.kefu.WxMpKefuMessage;
