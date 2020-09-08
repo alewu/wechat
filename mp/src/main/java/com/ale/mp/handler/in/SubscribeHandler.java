@@ -1,4 +1,4 @@
-package com.ale.mp.handler;
+package com.ale.mp.handler.in;
 
 import com.ale.mp.builder.TextBuilder;
 import me.chanjar.weixin.common.error.WxErrorException;

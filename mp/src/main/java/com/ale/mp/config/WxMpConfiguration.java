@@ -1,6 +1,6 @@
 package com.ale.mp.config;
 
-import com.ale.mp.handler.*;
+import com.ale.mp.handler.in.*;
 import lombok.AllArgsConstructor;
 import me.chanjar.weixin.mp.api.WxMpMessageRouter;
 import me.chanjar.weixin.mp.api.WxMpService;

@@ -1,4 +1,4 @@
-package com.ale.mp.handler;
+package com.ale.mp.handler.in;
 
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;

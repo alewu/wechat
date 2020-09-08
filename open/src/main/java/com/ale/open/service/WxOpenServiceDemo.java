@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.JedisPool;
+import redis.clients.util.Pool;
 
 import javax.annotation.PostConstruct;
 
@@ -30,7 +31,7 @@ public class WxOpenServiceDemo extends WxOpenServiceImpl {
 
     @PostConstruct
     public void init() {
-        WxOpenInRedisConfigStorage inRedisConfigStorage = new WxOpenInRedisConfigStorage(getJedisPool());
+        WxOpenInRedisConfigStorage inRedisConfigStorage = new WxOpenInRedisConfigStorage(null);
         inRedisConfigStorage.setComponentAppId(wechatOpenProperties.getComponentAppId());
         inRedisConfigStorage.setComponentAppSecret(wechatOpenProperties.getComponentSecret());
         inRedisConfigStorage.setComponentToken(wechatOpenProperties.getComponentToken());
